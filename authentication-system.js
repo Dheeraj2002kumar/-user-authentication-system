@@ -4,14 +4,16 @@ const AuthSystem = require('./AuthSystem');
     const authSystem = new AuthSystem();
 
     // Register users
-    await authSystem.registerUser("john_doe", "password123");
-    await authSystem.registerUser("jane_smith", "securePass");
+    await authSystem.registerUser("Dheeraj", "password123");
+    await authSystem.registerUser("Niharika", "securePass");
 
     // Attempt to login with correct credentials
-    const token = await authSystem.loginUser("john_doe", "password123");  // Should succeed
+    const token = await authSystem.loginUser("Dheeraj", "password123");  // Should succeed
 
+    console.log(); // for line blank line in console
+    
     // Try with incorrect login credentials
-    await authSystem.loginUser("john_doe", "password123");  // Should fail
+    await authSystem.loginUser("Dheeraj1", "password123");  // Should fail
 
     // Test JWT token verification
     if (token) {
